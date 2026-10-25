@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>UP Mines ISTP Checker</title>
+<style>
+body{font-family:Arial,sans-serif;background:#f3f5f9;margin:0;padding:20px;color:#222}
+.card{max-width:650px;margin:auto;background:white;padding:20px;border-radius:12px}
+input,button{box-sizing:border-box;width:100%;padding:12px;margin:8px 0;border-radius:7px;border:1px solid #ccc}
+button{background:#1769d2;color:white;font-weight:bold;border:0}
+h1{font-size:25px}
+.note{color:#555;font-size:14px}
+</style>
+</head>
+<body>
+<div class="card">
+<h1>UP Mines ISTP Checker</h1>
+<p class="note">Official ISTP PDF records checker</p>
+<form action="/start" method="post">
+<label>Start eID</label>
+<input type="number" name="start_id" required>
+<label>End eID</label>
+<input type="number" name="end_id" required>
+<label>Destinations (1–10, comma separated)</label>
+<input type="text" name="destinations" placeholder="Mahoba, Jhansi, Kanpur" required>
+<button type="submit">Check ISTP Records</button>
+</form>
+<p class="note">Results: ISTP No., Origin Transit Pass No., Origin Transit Pass Generation Date, Destination District, Mineral, Quantity, Loading From (Origin State).</p>
+</div>
+</body>
+</html>
