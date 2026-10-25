@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>ISTP Results</title>
+<style>
+body{font-family:Arial,sans-serif;margin:16px;background:#f4f6fa;color:#222}
+.wrap{background:white;padding:16px;border-radius:10px;overflow-x:auto}
+table{border-collapse:collapse;width:100%;font-size:13px}
+th,td{border:1px solid #ccc;padding:8px;text-align:left}
+th{background:#9b4247;color:white}
+a{color:#1769d2}
+</style>
+</head>
+<body>
+<h2>UP Mines ISTP Results</h2>
+<p>Checked: {{ job.checked }} / {{ job.total }}</p>
+<p>Status: {{ job.state }}</p>
+<p><a href="/csv/{{ job.id }}">Download CSV</a> | <a href="/">New Search</a></p>
+<div class="wrap">
+<table>
+<thead>
+<tr>
+{% for c in columns %}
+<th>{{ c }}</th>
+{% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for row in job.rows %}
+<tr>
+{% for c in columns %}
+<td>{{ row.get(c, "") }}</td>
+{% endfor %}
+</tr>
+{% else %}
+<tr><td colspan="{{ columns|length }}">No results yet.</td></tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+</body>
+</html>
